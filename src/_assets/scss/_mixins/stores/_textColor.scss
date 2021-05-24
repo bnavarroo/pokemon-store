@@ -1,0 +1,14 @@
+@import '../../_libs/bootstrap/bootstrap.config';
+@import '../../_variables/stores.scss';
+
+@mixin make-stores-text-color($ref, $value, $type) {
+  .#{$ref}-store {
+    .#{"__text-store-#{$type}"} {
+      color: $value;
+    }
+
+    .#{"__text-store-#{$type}-dark"} {
+      color: darken($value, 20);
+    }
+  }
+}

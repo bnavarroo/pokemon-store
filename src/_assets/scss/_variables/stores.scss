@@ -1,0 +1,27 @@
+// Primary Colors
+$rock-primary-color: #c8b686;
+$fire-primary-color: #f2584a;
+$water-primary-color: #77b3d4;
+
+$primary-color-stores: (
+  rock: $rock-primary-color,
+  fire: $fire-primary-color,
+  water: $water-primary-color
+);
+
+// Secondary Colors
+$rock-secondary-color: #c8b686;
+$fire-secondary-color: #f2584a;
+$water-secondary-color: #77b3d4;
+
+$secondary-color-stores: (
+  rock: $rock-secondary-color,
+  fire: $fire-secondary-color,
+  water: $water-secondary-color
+);
+
+// Map of Colors
+$map-colors-stores: (
+  'primary': $primary-color-stores,
+  'secondary': $secondary-color-stores
+);

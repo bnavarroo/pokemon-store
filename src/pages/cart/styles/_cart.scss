@@ -1,0 +1,111 @@
+@import '../../../_assets/scss/_libs/bootstrap/index.scss';
+
+$breakpoint-mobile: 'md';
+$col-prod-img-width: 35%;
+
+.cart {
+  .cart-cmp {
+    &-items, &-header{
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-header {
+      font-weight: 600;
+      font-size: 1.15rem;
+      border-bottom: 1px solid #DDD;
+
+      @include media-breakpoint-down($breakpoint-mobile) {
+        display: none;
+      }
+    }
+
+    &-items{
+      .col-prod {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+    }
+
+    &-empty {
+      &-title {
+        font-size: 2rem; 
+        font-weight: 300;
+      }
+    }
+
+    &-item {
+      &-row {
+        display: flex;
+        flex-direction: column;
+
+        @include media-breakpoint-up($breakpoint-mobile) {
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+
+      &-img {
+        width: $col-prod-img-width;
+        img {
+          width: 100%;
+          max-width: 200px;
+        }
+        @include media-breakpoint-down($breakpoint-mobile) {
+          min-width: 100%;
+        }
+      }
+
+      &-name {
+        width: calc(100% - #{$col-prod-img-width});
+        font-weight: 500;
+        &-cod {
+          color: #777;
+          font-weight: 400;
+        }
+
+        @include media-breakpoint-down($breakpoint-mobile) {
+          min-width: 100%;
+        }
+      }
+
+      &-price-total {
+        font-size: 1.1em;
+        font-weight: 600;
+      }
+
+      &-delete {
+        margin-top: 10px;
+        @include media-breakpoint-up($breakpoint-mobile) {
+          margin-top: 0;
+          &-text {
+            display: none;
+          }
+        }
+        
+      }
+    }
+
+    .col-prod { width: 40%; }
+    .col-qtd { width: 15%; text-align: center; }
+    .col-unit { width: 20%; text-align: center; }
+    .col-tot { width: 20%; text-align: center; }
+    .col-del { width: 5%; text-align: center; }
+
+    .cart-cmp-col {
+      flex: 0 0 auto;
+    }
+
+    @include media-breakpoint-down($breakpoint-mobile) {
+      .col-unit {
+        display: none;
+      }
+
+      .cart-cmp-col {
+        min-width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

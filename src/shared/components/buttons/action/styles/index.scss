@@ -1,0 +1,11 @@
+.btn-action {
+  &-icon {
+    &-img {
+      width: 1.25em;
+    }
+  }
+  &-text {
+    font-size: 1em;
+    font-weight: 500;
+  }
+}

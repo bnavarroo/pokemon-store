@@ -1,0 +1,12 @@
+.loading-cmp {
+  opacity: 0.75;
+  background: #FFF;
+  transition: opacity .75s;
+  z-index: 9999;
+
+  &.invisible {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,11 @@
+.initial-user-presentation{
+  .store-selection-cmp {
+    &-card {
+      &.card{  
+        &.active {
+          background-color: rgba(238,238,238, .65);
+        }
+      }
+    }
+  }
+}

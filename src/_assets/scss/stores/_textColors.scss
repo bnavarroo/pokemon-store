@@ -1,0 +1,8 @@
+@import '../_mixins/stores/textColor';
+
+@each $type-key, $type-value in $map-colors-stores {
+  $map-value: map-get($map-colors-stores, $type-key);
+  @each $ref, $value in $map-value {
+    @include make-stores-text-color($ref, $value, $type-key);
+  }
+}

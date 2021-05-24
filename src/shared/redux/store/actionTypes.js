@@ -1,0 +1,3 @@
+const SET_STORE_SELECTED = 'SET_STORE_SELECTED';
+
+export default { SET_STORE_SELECTED };

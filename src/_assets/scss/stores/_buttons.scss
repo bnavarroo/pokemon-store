@@ -1,0 +1,8 @@
+@import '../_mixins/stores/buttons';
+
+@each $type-key, $type-value in $map-colors-stores {
+  $map-value: map-get($map-colors-stores, $type-key);
+  @each $ref, $value in $map-value {
+    @include make-stores-button($ref, $value, $type-key);
+  }
+}

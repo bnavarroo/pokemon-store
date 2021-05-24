@@ -1,0 +1,25 @@
+@import '../../../styles/utilities';
+
+.minicart-cmp {
+  &-icon {
+    cursor: pointer;
+    font-size: 2rem;
+    
+    @include media-breakpoint-up($breakpoint-mobile-up) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &-quantity {
+    bottom: -5px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FFF;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+}
+
+@import './cart';

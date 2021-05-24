@@ -1,0 +1,38 @@
+@import '../../../_assets/scss/_libs/bootstrap/bootstrap.config';
+
+.initial-user-presentation {
+  .user-identification-cmp {
+
+    &-label {
+      display: table;
+      width: 100%;
+      text-align: center;
+      font-size: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    &-input {
+      font-size: 1.15rem;
+      width: 100%;
+      padding: 1rem .5rem;
+      border: 0;
+      border-bottom: 1px solid #CCC;
+      text-align: center;
+      outline: 0;
+    }
+
+    &-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 1rem;
+
+      @include media-breakpoint-up('lg') {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+
+    }
+
+  }
+}

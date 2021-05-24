@@ -1,0 +1,19 @@
+.cart-cmp{
+  &-item {
+    &-price {
+      &-qtd {
+        &-wrapper {
+          background: #FFF;
+          border: 1px solid #DDD;
+          max-width: 100px;
+        }
+        &-btn {
+          &.btn{
+            font-size: 1.25em;
+            width: 35%;
+          }
+        }
+      }
+    }
+  }
+}

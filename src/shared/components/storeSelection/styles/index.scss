@@ -1,0 +1,27 @@
+.store-selection-cmp {
+  &-card {
+    &.card {
+      border: 0px;
+      background: transparent;
+      cursor: pointer;
+
+      &:hover {
+        .store-selection-cmp-card-img {
+          transform: scale(1.1) !important;
+        }
+      }
+    }
+
+    &-img {
+      min-width: 50px;
+      max-width: 45%;
+      transition: all .5s;
+    }
+
+    &-check {
+      position: absolute;
+      top: 5%;
+      right: 25%;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+// Buttons and Forms
+$input-btn-padding-y: .75rem;
+$input-btn-padding-x: 1rem;
+
+$input-btn-padding-y-sm: .5rem;
+$input-btn-padding-x-sm: .75rem;
+
+$input-btn-padding-y-lg: 1rem;
+$input-btn-padding-x-lg: 1.25rem;
+
+$input-btn-focus-width: 0px;
+$input-btn-focus-color: transparent;
+$input-border-color: #eaeaea;
+$input-focus-border-color: $input-border-color;
+
+$btn-focus-box-shadow: none!important;
+
+$input-color: #777;
+
+// Colors
+$primary: #222;
+$secondary: #c12026;
+
+// Links
+$link-hover-decoration: none;
+
+
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import "~bootstrap/scss/utilities";

@@ -1,0 +1,35 @@
+@import '../../../../_assets/scss/_libs/bootstrap/bootstrap.config';
+
+$breakpoint-mobile-up: 'lg';
+$width-logo-desktop: 90px;
+$width-logo-mobile: 65px;
+
+.header-clean-cmp {
+  font-size: 1rem;
+  border-bottom: 1px solid #DDD;
+
+  @include media-breakpoint-up($breakpoint-mobile-up) {
+    font-size: 1.2rem;
+  }
+
+  &-logo {
+    width: $width-logo-mobile;
+    @include media-breakpoint-up($breakpoint-mobile-up) {
+      width: $width-logo-desktop;
+    }
+  }
+
+  &-lock {
+
+    &-icon {
+      font-size: 1.75em;
+    }
+    
+    &-text {
+      font-size: 1em;
+      line-height: 1.75em;
+      color: #777;
+    }
+
+  }
+}

@@ -1,0 +1,4 @@
+@import '../../../_assets/scss/_variables/pages.scss';
+
+$page-height-desktop: calc(100vh - #{$header-height-desktop + $footer-height});
+$page-height-mobile: calc(100vh - #{$header-height-mobile + $footer-height});

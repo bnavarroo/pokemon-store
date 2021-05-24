@@ -1,0 +1,20 @@
+@import '../../_variables/stores.scss';
+
+$text-primary-color: #FFF;
+
+@mixin make-stores-button($ref, $value, $type) {
+  .#{$ref}-store {
+    .#{"__btn-store-#{$type}"} {
+      background-color: $value;
+      border-color: $value;
+      color: $text-primary-color;
+    }
+
+    .#{"__btn-store-#{$type}-dark"} {
+      background-color: darken($value, 20);
+      border-color: darken($value, 20);
+      color: $text-primary-color;
+    }
+
+  }
+}

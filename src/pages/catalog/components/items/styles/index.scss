@@ -1,0 +1,53 @@
+@import '../../../../../_assets/scss/_libs/bootstrap/bootstrap.config';
+
+$img-card-size: 180px;
+
+.catalog {
+  &-card {
+    color: #777;
+    box-shadow: 0px 0px 15px 5px #eee;
+
+    &-img {
+      max-width: 200px;
+
+      &-wrapper {
+        width: 100%;
+        height: $img-card-size + 20px;
+      }
+    }
+
+    &-price {
+      color: #000;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    &-button-wrapper {
+      font-size: 1rem;
+    }
+
+    &-no-results {
+      &-img {
+        max-width: 150px;
+      }
+    }
+  }
+
+  &-no-results {
+    &-img {
+      max-width: 200px;
+      opacity: 0.25;
+    }
+
+    &-text {
+      color: #666;
+      font-size: .95rem;
+      font-weight: 400;
+
+      @include media-breakpoint-up('md') {
+        font-size: 1.15rem;
+      }
+
+    }
+  }
+}

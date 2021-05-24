@@ -1,0 +1,31 @@
+$btn-bg-color: #FFF;
+
+%header-search-cmp-button-icon {
+  background-color: $btn-bg-color;
+  border-color: $btn-bg-color;
+  opacity: 1;
+}
+
+.header-search-cmp {
+
+  &-wrapper {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom-width: 4px;
+  }
+
+  &-button {
+    &.btn {
+      @extend %header-search-cmp-button-icon;
+      color: #000;
+
+      &:disabled {
+        @extend %header-search-cmp-button-icon;
+        color: #BBB;
+      }
+    }    
+
+    &-icon {
+      font-size: 1.25rem;
+    }
+  }
+}

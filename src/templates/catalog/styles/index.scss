@@ -1,0 +1,7 @@
+@import './variables';
+
+.catalog-tmp {
+  &-page {
+    min-height: $page-height-desktop;
+  }
+}

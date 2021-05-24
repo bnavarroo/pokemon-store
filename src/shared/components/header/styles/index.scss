@@ -1,0 +1,50 @@
+@import './utilities';
+
+$width-logo-desktop: 90px;
+$width-logo-mobile: 65px;
+
+.header-cmp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  color: #FFF;
+  height: $header-height-mobile;
+  width: 100%;
+
+  @include media-breakpoint-up($breakpoint-mobile-up) {
+    height: $header-height-desktop;
+  }
+  
+
+  &-shadow {
+    width: 100%;
+    height: $header-height-mobile;
+    @include media-breakpoint-up($breakpoint-mobile-up) {
+      height: $header-height-desktop;
+    }
+  }
+
+  &-logo {
+    &-wrapper {
+      width: $width-logo-mobile;
+      @include media-breakpoint-up($breakpoint-mobile-up) {
+        width: $width-logo-desktop;
+      }
+    }
+  }
+
+  &-search {
+    width: 100%;
+    min-width: 45%;
+    @include media-breakpoint-up($breakpoint-mobile-up) {
+      width: auto;
+    }
+  }
+
+  .side-mb-column {
+    @include media-breakpoint-down($breakpoint-mobile-up) {
+      width: 70px;
+    }
+  }
+}

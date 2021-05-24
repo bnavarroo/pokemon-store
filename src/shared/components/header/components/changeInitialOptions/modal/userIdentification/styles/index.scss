@@ -1,0 +1,13 @@
+.modal-user-identfication {
+  .user-identification-cmp {
+    &-input {
+      text-align: center;
+    }
+    
+    &-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  }
+}

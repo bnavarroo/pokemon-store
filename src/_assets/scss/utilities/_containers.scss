@@ -1,0 +1,12 @@
+.fluid-container-x {
+  min-width: 100%;
+}
+
+.fluid-container-y {
+  min-height: 100vh;
+}
+
+.full-container {
+  @extend .fluid-container-x;
+  @extend .fluid-container-y;
+}

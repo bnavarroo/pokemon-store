@@ -1,0 +1,25 @@
+@import '../../../styles/utilities';
+
+.header-change-init-opt-cmp {
+  &-icon {
+    font-size: 1.5em;
+    margin-right: 5px;
+    @include media-breakpoint-up($breakpoint-mobile-up) {
+      font-size: 2em;
+      margin-right: 0px;
+    }
+  } 
+
+  &-popover  {
+    .list-group {
+      &-item {
+        font-size: 1.2rem;
+        cursor: pointer;
+
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

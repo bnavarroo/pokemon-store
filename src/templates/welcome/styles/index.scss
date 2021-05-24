@@ -1,0 +1,25 @@
+@import '../../../_assets/scss/_libs/bootstrap/bootstrap.config';
+        
+.welcome-tmp { 
+  font-size: .75rem;
+  background: url('../../../_assets/img/bg-welcome.jpg') no-repeat center;
+  background-size: cover;
+
+  @include media-breakpoint-up('lg') {
+    font-size: 1rem;
+  }
+
+  &-logo {
+    min-width: 110px;
+    max-width: 12%;
+  }
+
+  .page-title {
+    font-size: 3em;
+  }
+
+  .page-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+}

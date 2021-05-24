@@ -1,0 +1,8 @@
+.not-found {
+  background: url('../../../_assets/img/bg-not-found.jpg') no-repeat center;
+  background-size: cover;
+
+  &-wrapper {
+    background: rgba(0,0,0,.25);
+  }
+}

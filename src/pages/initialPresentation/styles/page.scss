@@ -1,0 +1,10 @@
+.initial-presentation {
+  &-btn {
+      &.btn {
+        border-color:#DDD;
+      &:hover {
+        border-color:#BBB;
+      }
+    }
+  }
+}
