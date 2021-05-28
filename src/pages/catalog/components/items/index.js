@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
 import LoadingComponent from '../../../../shared/components/loading';
+import PaginationList from '../../../../shared/components/pagination';
 import CatalogPageItemsProduct from './product';
+import useListPaginated from '../../../../utilities/hooks/paginatedList';
 import CatalogAPI from '../../../../shared/api/catalog';
 import { isNullOrUndefined } from '../../../../utilities/functions/general';
-import { urlParamToString } from '../../../../utilities/converters';
 import { STORE_ATTR_REF } from '../../../../constants/stores';
 import Pikachu from '../../../../_assets/img/pikachu.png';
 import './styles/index.scss';
@@ -25,22 +26,17 @@ const CatalogPageItems = () => {
   };
 
   const prevStore = usePreviousStore(store);
-  const [list, setList] = useState([]);
-  const [showLoadingComponent, setShowLoadingComponent] = useState(true);
+  const { listPaginated, showLoadingComponent, getData } = useListPaginated();
+  const handleChangePage = (page) => {
+    const callbackPromise = () => CatalogAPI.GetItemsWithPagination(store[STORE_ATTR_REF], page, filtro);
+    getData(callbackPromise);
+  };
 
   useEffect(() => {
     if (isNullOrUndefined(prevStore)
       || (prevStore[STORE_ATTR_REF] !== store[STORE_ATTR_REF] && isNullOrUndefined(filtro))
       || prevStore[STORE_ATTR_REF] === store[STORE_ATTR_REF]) {
-      setShowLoadingComponent(true);
-      CatalogAPI.GetItems(store[STORE_ATTR_REF]).then((result) => {
-        const items = isNullOrUndefined(filtro)
-          ? result
-          : result.filter((item) => urlParamToString(item.name.toUpperCase()).indexOf(urlParamToString(filtro.toUpperCase())) !== -1);
-
-        setList(items);
-        setShowLoadingComponent(false);
-      });
+      handleChangePage(1);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filtro, store]);
@@ -53,14 +49,14 @@ const CatalogPageItems = () => {
     <>
       <Row>
         {
-          list.map((product, index) => (
+          listPaginated.items.map((product, index) => (
             <Col xs={12} sm={6} md={4} lg={3} key={`product-${index}`} id={`product-${product.id}`} className="py-3">
               <CatalogPageItemsProduct product={product} />
             </Col>
           ))
         }
         {
-          (list.length === 0 && !isNullOrUndefined(filtro)) && (
+          (listPaginated.items.length === 0 && !isNullOrUndefined(filtro)) && (
             <div className="catalog-no-results centralized flex-column py-3 pt-lg-5 text-center">
               <img src={Pikachu} alt="" className="catalog-no-results-img" />
               <div className="catalog-no-results-title display-4 mt-3 mb-2">Ops...</div>
@@ -69,6 +65,11 @@ const CatalogPageItems = () => {
           )
         }
       </Row>
+      {
+        listPaginated.items.length > 0 && (
+          <PaginationList totalPages={listPaginated.totalPages} currentPage={listPaginated.page} handleClick={(page) => handleChangePage(page)} />
+        )
+      }
       <LoadingComponent visible={showLoadingComponent} />
     </>
   );
