@@ -7,12 +7,39 @@ import './styles/index.scss';
 const PaginationList = ({ totalPages, currentPage, handleClick }) => {
   const paginationItems = [];
   for (let i = 1; i <= totalPages; i++) {
-    paginationItems.push(
-      <Pagination.Item key={i} active={i === currentPage} onClick={() => handleClick(i)}>{i}</Pagination.Item>,
-    );
+    if (i === currentPage || i === (currentPage - 1) || i === (currentPage + 1)) {
+      paginationItems.push(
+        <Pagination.Item
+          key={i}
+          active={i === currentPage}
+          className={`${i === currentPage ? '__bg-store-primary' : ''}`}
+          onClick={() => handleClick(i)}
+        >
+          {i}
+        </Pagination.Item>,
+      );
+    }
   }
   return (
-    <Pagination>{paginationItems}</Pagination>
+    <Pagination className="pagination-cmp my-3">
+      {
+        currentPage > 1 && (
+          <>
+            <Pagination.First onClick={() => handleClick(1)}>Primeira</Pagination.First>
+            <Pagination.Prev onClick={() => handleClick(currentPage - 1)}>Anterior</Pagination.Prev>
+          </>
+        )
+      }
+      {paginationItems}
+      {
+        currentPage < totalPages && (
+          <>
+            <Pagination.Next onClick={() => handleClick(currentPage + 1)}>Próxima</Pagination.Next>
+            <Pagination.Last onClick={() => handleClick(totalPages)}>Úlltima</Pagination.Last>
+          </>
+        )
+      }
+    </Pagination>
   );
 };
 

@@ -1,0 +1,14 @@
+.pagination-cmp {
+  .page-item {
+    &.active {
+      font-weight: 600;
+      .page-link {
+        background-color: transparent;
+        border-color: transparent;
+      }
+    }
+    .page-link {
+      color: #777;
+    }
+  }
+}

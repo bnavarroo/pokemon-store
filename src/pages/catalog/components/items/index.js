@@ -67,7 +67,9 @@ const CatalogPageItems = () => {
       </Row>
       {
         listPaginated.items.length > 0 && (
-          <PaginationList totalPages={listPaginated.totalPages} currentPage={listPaginated.page} handleClick={(page) => handleChangePage(page)} />
+          <div className="centralized">
+            <PaginationList totalPages={listPaginated.totalPages} currentPage={listPaginated.page} handleClick={(page) => handleChangePage(page)} />
+          </div>
         )
       }
       <LoadingComponent visible={showLoadingComponent} />

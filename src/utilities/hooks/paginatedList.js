@@ -16,14 +16,22 @@ function useListPaginated() {
 
   /**
  * Devolve o carrinho atual
- * @param {object} carts
- * @param {string} storeRef
- * @returns {array} {storeRef: string, items: array, totalCart: number, cartIndex: number}
+ * @param {function} callbackPromise callback que devolve uma promise
+ * @returns {void}
 */
   const getData = (callbackPromise) => {
     setShowLoadingComponent(true);
     callbackPromise().then((result) => {
-      setListPaginated(result);
+      const { page, perPage, totalPages, hasPrevious, hasNext, items, totalItems } = result;
+      setListPaginated({
+        page: page ?? 1,
+        perPage: perPage ?? LIST_ITEMS_PER_PAGE,
+        totalPages: totalPages ?? 1,
+        hasPrevious: hasPrevious ?? false,
+        hasNext: hasNext ?? false,
+        items: items ?? [],
+        totalItems: totalItems ?? 0,
+      });
       setShowLoadingComponent(false);
     });
   };
