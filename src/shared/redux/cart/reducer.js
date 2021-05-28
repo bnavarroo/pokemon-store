@@ -1,8 +1,9 @@
 import TYPES from './actionTypes';
-import { getAllCarts, getCurrentCart, getNewCartOnUpdate, getNewCartOnRemove } from './functions';
+import { getInitCarts, getNewCartOnUpdate, getNewCartOnRemove } from './functions';
+import { getCurrentCart } from '../../../utilities/functions/cart';
 import { CART_ATTR_REF } from '../../../constants/cart';
 
-const initialState = { carts: getAllCarts() };
+const initialState = { carts: getInitCarts() };
 
 const cartReducer = (state = initialState, action) => {
   let currentCart;
@@ -12,7 +13,7 @@ const cartReducer = (state = initialState, action) => {
 
   // sempre que uma acao for aplicada a um carrinho especifico
   if (action.storeRef) {
-    currentCart = getCurrentCart(action[CART_ATTR_REF], nextStateCart);
+    currentCart = getCurrentCart(nextStateCart, action[CART_ATTR_REF]);
   }
 
   switch (action.type) {
@@ -29,7 +30,7 @@ const cartReducer = (state = initialState, action) => {
       return nextState;
 
     case TYPES.CLEAR_CART:
-      return { carts: getAllCarts() };
+      return { carts: getInitCarts() };
 
     default:
       return state;

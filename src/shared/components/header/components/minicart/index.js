@@ -8,8 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import Cart from '../../../cart';
 import CheckoutButton from '../../../buttons/checkout';
+import { getCurrentCart } from '../../../../../utilities/functions/cart';
 import { numberToLocaleString } from '../../../../../utilities/converters';
-import { CART_ATTR_REF } from '../../../../../constants/cart';
 import { STORE_ATTR_REF } from '../../../../../constants/stores';
 import './styles/index.scss';
 
@@ -18,7 +18,8 @@ const HeaderMinicart = () => {
   const [cartVisible, setCartVisible] = useState(false);
   const { store } = useSelector((state) => state.storeReducer);
   const { carts } = useSelector((state) => state.cartReducer);
-  const [currentCart] = carts.filter((cart) => cart[CART_ATTR_REF] === store[STORE_ATTR_REF]);
+  const storeRef = store[STORE_ATTR_REF];
+  const currentCart = getCurrentCart(carts, storeRef);
 
   const hideMinicart = () => setCartVisible(false);
 

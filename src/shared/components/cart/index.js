@@ -6,8 +6,9 @@ import { Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import cartActions from '../../redux/cart/actions';
+import { getCurrentCart } from '../../../utilities/functions/cart';
 import { numberToLocaleString } from '../../../utilities/converters';
-import { CART_ATTR_REF, CART_ITEM_ATTR_REF } from '../../../constants/cart';
+import { CART_ITEM_ATTR_REF } from '../../../constants/cart';
 import { STORE_ATTR_REF } from '../../../constants/stores';
 import './styles/index.scss';
 
@@ -15,14 +16,15 @@ const Cart = ({ backToCatalog }) => {
   const dispatch = useDispatch();
   const { store } = useSelector((state) => state.storeReducer);
   const { carts } = useSelector((state) => state.cartReducer);
-  const [currentCart] = carts.filter((cart) => cart[CART_ATTR_REF] === store[STORE_ATTR_REF]);
+  const storeRef = store[STORE_ATTR_REF];
+  const currentCart = getCurrentCart(carts, storeRef);
 
   const removeItemFromCart = (product) => {
-    dispatch(cartActions.removeItemFromCartByStore(store[STORE_ATTR_REF], product[CART_ITEM_ATTR_REF]));
+    dispatch(cartActions.removeItemFromCartByStore(storeRef, product[CART_ITEM_ATTR_REF]));
   };
 
   const updateQtdItem = (product, quantity) => {
-    dispatch(cartActions.updateItemInCartByStore(store[STORE_ATTR_REF], { product, quantity }));
+    dispatch(cartActions.updateItemInCartByStore(storeRef, { product, quantity }));
   };
 
   return (

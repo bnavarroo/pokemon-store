@@ -5,21 +5,23 @@ import { Card } from 'react-bootstrap';
 import cartActions from '../../../../../shared/redux/cart/actions';
 import BuyButton from '../../../../../shared/components/buttons/buy';
 import { numberToLocaleString } from '../../../../../utilities/converters';
+import { getCurrentCart } from '../../../../../utilities/functions/cart';
 import { STORE_ATTR_REF } from '../../../../../constants/stores';
-import { CART_ATTR_REF, CART_ITEM_ATTR_REF } from '../../../../../constants/cart';
+import { CART_ITEM_ATTR_REF } from '../../../../../constants/cart';
 import './styles/index.scss';
 
 const CatalogPageItemsProduct = ({ product }) => {
   const { store } = useSelector((state) => state.storeReducer);
+  const storeRef = store[STORE_ATTR_REF];
   const dispatch = useDispatch();
 
   const addItemInCart = () => {
-    dispatch(cartActions.updateItemInCartByStore(store[STORE_ATTR_REF], { product, quantity: 1 }));
+    dispatch(cartActions.updateItemInCartByStore(storeRef, { product, quantity: 1 }));
   };
 
   const [inCart, setInCart] = useState(false);
   const { carts } = useSelector((state) => state.cartReducer);
-  const [currentCart] = carts.filter((cart) => cart[CART_ATTR_REF] === store[STORE_ATTR_REF]);
+  const currentCart = getCurrentCart(carts, storeRef);
   useEffect(() => {
     if (currentCart.items.length) {
       const found = currentCart.items.filter((cartitem) => cartitem.product[CART_ITEM_ATTR_REF] === product[CART_ITEM_ATTR_REF]).length > 0;

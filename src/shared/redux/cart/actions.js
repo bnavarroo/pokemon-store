@@ -8,7 +8,8 @@ const updateItemInCartByStore = (
   },
 ) => ({
   type: TYPES.UPDATE_ITEM_IN_CART_BY_STORE,
-  ...{ storeRef, item },
+  storeRef,
+  item,
 });
 
 const removeItemFromCartByStore = (
@@ -16,7 +17,8 @@ const removeItemFromCartByStore = (
   itemRef,
 ) => ({
   type: TYPES.REMOVE_ITEM_FROM_CART_BY_STORE,
-  ...{ storeRef, itemRef },
+  storeRef,
+  itemRef,
 });
 
 const clearCart = () => ({ type: TYPES.CLEAR_CART });

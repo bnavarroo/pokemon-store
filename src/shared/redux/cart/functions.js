@@ -5,7 +5,7 @@ import { STORES, STORE_ATTR_REF } from '../../../constants/stores';
  * Retorna todos os carrinhos disponíveis
  * @returns {array} [{storeRef: string, items: array, totalCart: number}]
 */
-export function getAllCarts() {
+export function getInitCarts() {
   const carts = [];
   STORES.forEach((store) => {
     carts.push({

@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CheckoutButton from '../../../../shared/components/buttons/checkout';
+import { getCurrentCart } from '../../../../utilities/functions/cart';
 import { numberToLocaleString } from '../../../../utilities/converters';
-import { CART_ATTR_REF } from '../../../../constants/cart';
 import { STORE_ATTR_REF } from '../../../../constants/stores';
 import './styles/index.scss';
 
 const CartPageSummary = ({ handleFinish }) => {
   const { store } = useSelector((state) => state.storeReducer);
   const { carts } = useSelector((state) => state.cartReducer);
-  const [currentCart] = carts.filter((cart) => cart[CART_ATTR_REF] === store[STORE_ATTR_REF]);
+  const storeRef = store[STORE_ATTR_REF];
+  const currentCart = getCurrentCart(carts, storeRef);
   const visibleClass = currentCart.totalItems <= 0 ? 'd-none' : '';
 
   return (
