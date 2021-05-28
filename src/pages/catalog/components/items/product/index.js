@@ -29,7 +29,7 @@ const CatalogPageItemsProduct = ({ product }) => {
     } else {
       setInCart(false);
     }
-  }, [currentCart.items, product]);
+  }, [currentCart, product]);
 
   return (
     <Card className="catalog-card border-0 p-2">
