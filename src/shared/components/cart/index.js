@@ -46,7 +46,7 @@ const Cart = ({ backToCatalog }) => {
                     <Col className="cart-cmp-item-row px-0 mx-0">
                       <div className="cart-cmp-col col-prod">
                         <div className="cart-cmp-item-img">
-                          <img src={cartItem.product.image} alt={cartItem.product.name} />
+                          <img className="img-fluid" src={cartItem.product.image} alt={cartItem.product.name} />
                         </div>
                         <div className="cart-cmp-item-name text-capitalize">
                           {cartItem.product.name}<br />

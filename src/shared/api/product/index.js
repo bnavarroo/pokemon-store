@@ -4,6 +4,7 @@ import { isNullOrUndefined } from '../../../utilities/functions/general';
 import URL_BASE_API from '../constants';
 
 const urlBase = `${URL_BASE_API}/pokemon`;
+const mainImageObjKey = 'official-artwork';
 
 export default class ProductAPI {
   constructor() {
@@ -19,7 +20,10 @@ export default class ProductAPI {
       id: result.id,
       name: result.name,
       abilities,
-      sprites: Object.values(result.sprites).filter((sprite) => !isNullOrUndefined(sprite)),
+      images: {
+        main: result.sprites.other[mainImageObjKey].front_default,
+        thumbs: Object.values(result.sprites).filter((sprite) => !isNullOrUndefined(sprite) && typeof sprite === 'string'),
+      },
     };
   }
 
@@ -34,5 +38,3 @@ export default class ProductAPI {
     return abilities;
   }
 }
-
-// https://stackoverflow.com/questions/40140149/use-async-await-with-array-map
