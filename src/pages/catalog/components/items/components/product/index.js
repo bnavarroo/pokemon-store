@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import cartActions from '../../../../../../shared/redux/cart/actions';
 import BuyButton from '../../../../../../shared/components/buttons/buy';
@@ -27,6 +28,7 @@ const CatalogPageItemsProduct = ({ product }) => {
         <div className="catalog-card-price">{ numberToLocaleString(product.price) }</div>
         <div className="catalog-card-button-wrapper mt-3">
           <BuyButton text={inCart ? 'Capturado' : 'Capturar!'} disabled={inCart} handleClick={() => addItemInCart()} />
+          <Link to={`/detalhes/${product.id}`} className="d-table p-3 mt-2 mx-auto">Ver detalhes</Link>
         </div>
       </Card.Footer>
     </Card>

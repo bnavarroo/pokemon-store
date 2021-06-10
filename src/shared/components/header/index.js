@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import HeaderSearch from './components/search';
 import HeaderChangeInitialOptions from './components/changeInitialOptions';
 import HeaderMinicart from './components/minicart';
@@ -17,7 +18,9 @@ const Header = () => {
       <header className="header-cmp centralized-y py-2 __bg-store-primary">
         <Container className="centralized-y justify-content-between flex-wrap">
           <div className="header-cmp-logo-wrapper order-2 order-lg-1">
-            <img className="header-cmp-logo-img img-fluid" src={logo} alt={store.name} title={store.name} />
+            <Link to="/catalogo">
+              <img className="header-cmp-logo-img img-fluid" src={logo} alt={store.name} title={store.name} />
+            </Link>
           </div>
           <div className="header-cmp-search order-4 order-lg-2">
             <HeaderSearch />

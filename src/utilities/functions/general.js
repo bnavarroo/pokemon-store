@@ -43,3 +43,11 @@ export function generateValueByIdAndType(id) {
   const localId = id <= 0 ? 1 : id;
   return (localId * 0.75); // .toFixed(2);
 }
+
+/**
+ * Faz a rolagem para o topo da págin
+ *
+*/
+export function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}

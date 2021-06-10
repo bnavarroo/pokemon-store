@@ -7,6 +7,7 @@ import InitialUserIdentificationRoutes from '../pages/initialUserIdentification/
 import initialStoreSelectionRoutes from '../pages/initialStoreSelection/routes';
 import catalogRoutes from '../pages/catalog/routes';
 import cartRoutes from '../pages/cart/routes';
+import DetailsRoutes from '../pages/details/routes';
 
 const allRoutes = [
   ...notFoundRoutes,
@@ -15,6 +16,7 @@ const allRoutes = [
   ...initialStoreSelectionRoutes,
   ...catalogRoutes,
   ...cartRoutes,
+  ...DetailsRoutes,
 ];
 
 const Routes = () => (
