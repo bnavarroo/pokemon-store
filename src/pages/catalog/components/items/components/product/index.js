@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { Card } from 'react-bootstrap';
-import cartActions from '../../../../../shared/redux/cart/actions';
-import BuyButton from '../../../../../shared/components/buttons/buy';
-import { numberToLocaleString } from '../../../../../utilities/converters';
-import { getCurrentCart } from '../../../../../utilities/functions/cart';
-import { STORE_ATTR_REF } from '../../../../../constants/stores';
-import { CART_ITEM_ATTR_REF } from '../../../../../constants/cart';
+import cartActions from '../../../../../../shared/redux/cart/actions';
+import BuyButton from '../../../../../../shared/components/buttons/buy';
+import { numberToLocaleString } from '../../../../../../utilities/converters';
+import { getCurrentCart } from '../../../../../../utilities/functions/cart';
+import { STORE_ATTR_REF } from '../../../../../../constants/stores';
+import { CART_ITEM_ATTR_REF } from '../../../../../../constants/cart';
 import './styles/index.scss';
 
 const CatalogPageItemsProduct = ({ product }) => {

@@ -1,49 +1,15 @@
-import React, { useEffect, useRef } from 'react';
-import { useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import LoadingComponent from '../../../../shared/components/loading';
 import PaginationList from '../../../../shared/components/pagination';
-import CatalogPageItemsProduct from './product';
-import useListPaginated from '../../../../utilities/hooks/paginatedList';
-import CatalogAPI from '../../../../shared/api/catalog';
+import CatalogPageItemsProduct from './components/product';
+import useCatalogItems from './hooks/catalogItemsHook';
 import { isNullOrUndefined } from '../../../../utilities/functions/general';
-import { STORE_ATTR_REF } from '../../../../constants/stores';
 import Pikachu from '../../../../_assets/img/pikachu.png';
 import './styles/index.scss';
 
 const CatalogPageItems = () => {
-  const { store } = useSelector((state) => state.storeReducer);
-  const { filtro } = useParams();
-  const history = useHistory();
-
-  const usePreviousStore = (value) => {
-    const ref = useRef();
-    useEffect(() => {
-      ref.current = isNullOrUndefined(value) ? {} : value;
-    });
-    return ref.current;
-  };
-
-  const prevStore = usePreviousStore(store);
-  const { listPaginated, showLoadingComponent, getData } = useListPaginated();
-  const handleChangePage = (page) => {
-    const callbackPromise = () => CatalogAPI.GetItemsWithPagination(store[STORE_ATTR_REF], page, filtro);
-    getData(callbackPromise);
-  };
-
-  useEffect(() => {
-    if (isNullOrUndefined(prevStore)
-      || (prevStore[STORE_ATTR_REF] !== store[STORE_ATTR_REF] && isNullOrUndefined(filtro))
-      || prevStore[STORE_ATTR_REF] === store[STORE_ATTR_REF]) {
-      handleChangePage(1);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filtro, store]);
-
-  useEffect(() => {
-    if (!isNullOrUndefined(prevStore) && (prevStore[STORE_ATTR_REF] !== store[STORE_ATTR_REF])) history.replace('/catalogo/');
-  }, [history, prevStore, store]);
+  const { listPaginated, filtro, showLoadingComponent, handleChangePage } = useCatalogItems();
 
   return (
     <>
