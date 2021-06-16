@@ -12,16 +12,20 @@ import './styles/index.scss';
 const CatalogPageItemsProduct = ({ product }) => {
   const dispatch = useDispatch();
 
-  const { storeRef, inCart, image } = useCatalogItemsProduct(product);
+  const { storeRef, inCart, imageOnError } = useCatalogItemsProduct(product);
 
   const addItemInCart = () => {
-    dispatch(cartActions.updateItemInCartByStore(storeRef, { product: { ...product, image }, quantity: 1 }));
+    dispatch(cartActions.updateItemInCartByStore(storeRef, { product: { ...product }, quantity: 1 }));
   };
 
   return (
     <Card className="catalog-card border-0 p-2">
       <div className="catalog-card-img-wrapper centralized">
-        <Card.Img src={image} className="catalog-card-img" />
+        <Card.Img
+          src={product.image}
+          onError={(e) => imageOnError(e)}
+          className="catalog-card-img"
+        />
       </div>
       <Card.Footer className="text-center bg-white">
         <div className="catalog-card-name text-capitalize">{ product.name }</div>

@@ -9,11 +9,14 @@ import { PRODUCT_IMAGE_NOTFOUND } from '../../../../../../../constants/product';
 function useCatalogItemsProduct(product) {
   const { store } = useSelector((state) => state.storeReducer);
   const { carts } = useSelector((state) => state.cartReducer);
-  const [image, setImage] = useState(PRODUCT_IMAGE_NOTFOUND);
   const [inCart, setInCart] = useState(false);
 
   const storeRef = store[STORE_ATTR_REF];
   const currentCart = getCurrentCart(carts, storeRef);
+  const imageOnError = (e) => {
+    e.target.onerror = null;
+    e.target.src = PRODUCT_IMAGE_NOTFOUND;
+  };
 
   useEffect(() => {
     if (currentCart.items.length) {
@@ -24,17 +27,10 @@ function useCatalogItemsProduct(product) {
     }
   }, [currentCart, product]);
 
-  useEffect(() => {
-    const img = new Image();
-    img.src = product.image;
-    img.onload = () => setImage(product.image);
-    img.onerror = () => setImage(PRODUCT_IMAGE_NOTFOUND);
-  }, [product.image]);
-
   return {
     storeRef,
     inCart,
-    image,
+    imageOnError,
   };
 }
 

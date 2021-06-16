@@ -11,7 +11,7 @@ const DetailsPage = () => {
   return (
     <CatalogTemplate>
       {
-        images && (
+        !showLoadingComponent && (
           <Container className="my-3">
             <Row>
               <Col md={5} sm={12}>
