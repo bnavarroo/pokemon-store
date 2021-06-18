@@ -42,7 +42,7 @@ const DetailsPage = () => {
                     <div>Ataques/Movimentos:</div>
                     <ul>
                       {
-                        moves.map((move) => (<li>{move}</li>))
+                        moves.map((move) => (<li key={move}>{move}</li>))
                       }
                     </ul>
                   </Tab>

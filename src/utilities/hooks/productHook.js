@@ -29,7 +29,7 @@ function useProduct(productRef) {
 
   useEffect(() => {
     if (currentCart.items.length) {
-      const found = currentCart.items.filter((cartitem) => cartitem.product[CART_ITEM_ATTR_REF] === productRef).length > 0;
+      const found = currentCart.items.filter((cartitem) => parseInt(cartitem.product[CART_ITEM_ATTR_REF], 10) === parseInt(productRef, 10)).length > 0;
       setInCart(found);
     } else {
       setInCart(false);
