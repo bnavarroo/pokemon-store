@@ -1,13 +1,22 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap';
 import CatalogTemplate from '../../templates/catalog';
 import LoadingComponent from '../../shared/components/loading';
+import BuyButton from '../../shared/components/buttons/buy';
 import useDetails from './hooks/detailsHook';
 import './styles/page.scss';
 
 const DetailsPage = () => {
-  const { productDetails, showLoadingComponent } = useDetails();
-  const { images, name } = productDetails;
+  const {
+    productDetails,
+    showLoadingComponent,
+    inCart,
+    addProductInCartFromDetail,
+  } = useDetails();
+
+  const { images, name, baseExperience, moves, abilities } = productDetails;
+  const classTabs = 'p-3 border border-top-0';
+
   return (
     <CatalogTemplate>
       {
@@ -23,6 +32,21 @@ const DetailsPage = () => {
               </Col>
               <Col md={7} sm={12}>
                 <h1 className="pb-2 border-bottom text-capitalize">{name}</h1>
+                <div>Experiência: {baseExperience}</div>
+                <BuyButton text={inCart ? 'Capturado' : 'Capturar!'} disabled={inCart} handleClick={addProductInCartFromDetail} />
+                <Tabs defaultActiveKey="abilities">
+                  <Tab eventKey="abilities" title="Habilidades" className={classTabs}>
+                    <div>{JSON.stringify(abilities)}</div>
+                  </Tab>
+                  <Tab eventKey="moves" title="Movimentos" className={classTabs}>
+                    <div>Ataques/Movimentos:</div>
+                    <ul>
+                      {
+                        moves.map((move) => (<li>{move}</li>))
+                      }
+                    </ul>
+                  </Tab>
+                </Tabs>
               </Col>
             </Row>
           </Container>

@@ -1,22 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
-import cartActions from '../../../../../../shared/redux/cart/actions';
 import BuyButton from '../../../../../../shared/components/buttons/buy';
 import { numberToLocaleString } from '../../../../../../utilities/converters';
 import useCatalogItemsProduct from './hooks/catalogItemsProductHook';
 import './styles/index.scss';
 
 const CatalogPageItemsProduct = ({ product }) => {
-  const dispatch = useDispatch();
-
-  const { storeRef, inCart, imageOnError } = useCatalogItemsProduct(product);
-
-  const addItemInCart = () => {
-    dispatch(cartActions.updateItemInCartByStore(storeRef, { product: { ...product }, quantity: 1 }));
-  };
+  const { inCart, imageOnError, addProductInCartFromCatalog } = useCatalogItemsProduct(product);
 
   return (
     <Card className="catalog-card border-0 p-2">
@@ -31,7 +23,7 @@ const CatalogPageItemsProduct = ({ product }) => {
         <div className="catalog-card-name text-capitalize">{ product.name }</div>
         <div className="catalog-card-price">{ numberToLocaleString(product.price) }</div>
         <div className="catalog-card-button-wrapper mt-3">
-          <BuyButton text={inCart ? 'Capturado' : 'Capturar!'} disabled={inCart} handleClick={() => addItemInCart()} />
+          <BuyButton text={inCart ? 'Capturado' : 'Capturar!'} disabled={inCart} handleClick={addProductInCartFromCatalog} />
           <Link to={`/detalhes/${product.id}`} className="d-table p-3 mt-2 mx-auto">Ver detalhes</Link>
         </div>
       </Card.Footer>

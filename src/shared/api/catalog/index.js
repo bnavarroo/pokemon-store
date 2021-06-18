@@ -1,10 +1,10 @@
 /* eslint-disable no-plusplus */
 import Http from '../../../utilities/http';
-import { isNullOrUndefined, generateValueByIdAndType } from '../../../utilities/functions/general';
+import { isNullOrUndefined } from '../../../utilities/functions/general';
+import { getBaseProduct, getBaseProductImage } from '../../../utilities/functions/product';
 import { urlParamToString } from '../../../utilities/converters';
 import URL_BASE_API from '../constants';
 import { LIST_ITEMS_PER_PAGE } from '../../../constants/list';
-import { PRODUCT_IMAGE_SETTINGS } from '../../../constants/product';
 
 const urlBase = `${URL_BASE_API}/type`;
 const keyItems = 'pokemon';
@@ -30,10 +30,9 @@ export default class CatalogAPI {
 
     const response = items.map((item) => {
       const pokemon = item[keyItems];
-      const id = pokemon.url.match(/\/(\d+)+[/]?/g)[0].replace(/\//g, '');
-      const image = PRODUCT_IMAGE_SETTINGS.url.replace(PRODUCT_IMAGE_SETTINGS.strReplace, id);
-
-      return { id, name: pokemon.name, price: generateValueByIdAndType(id), image };
+      pokemon.id = pokemon.url.match(/\/(\d+)+[/]?/g)[0].replace(/\//g, '');
+      const pokemonBase = getBaseProduct(pokemon);
+      return { ...pokemonBase, image: getBaseProductImage(pokemon.id) };
     });
 
     return response;

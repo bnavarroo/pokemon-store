@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import Http from '../../../utilities/http';
 import { isNullOrUndefined } from '../../../utilities/functions/general';
+import { getBaseProduct } from '../../../utilities/functions/product';
 import URL_BASE_API from '../constants';
 
 const urlBase = `${URL_BASE_API}/pokemon`;
@@ -11,14 +12,22 @@ export default class ProductAPI {
     throw new Error('Não é possível instanciar objetos dessa classe.');
   }
 
+  /**
+  * Retorna as informações completas do produto/pokemón
+  * @param {int} id Id do pokemon
+  * @returns {object} { id: number, name: string, price: number, abilities: array, images: object };
+  */
   static async GetProduct(id) {
     const url = `${urlBase}/${id}`;
     const result = await Http.Get(url);
     const abilities = await ProductAPI.GetAbilities(result.abilities);
 
+    const pokemonBase = getBaseProduct(result);
+
     return {
-      id: result.id,
-      name: result.name,
+      ...pokemonBase,
+      baseExperience: result.base_experience,
+      moves: result.moves.map((move) => move.move.name),
       abilities,
       images: {
         main: result.sprites.other[mainImageObjKey].front_default,
@@ -27,6 +36,11 @@ export default class ProductAPI {
     };
   }
 
+  /**
+  * Retorna as informações de habilidade do produto/pokemón
+  * @param {array} arrayOfAbilities array com as informações referentes as habilidades
+  * @returns {object} { id: number, name: string, effect_entries: array };
+  */
   static async GetAbilities(arrayOfAbilities) {
     const abilities = await Promise.all(arrayOfAbilities.map(async (item) => {
       const details = await Http.Get(item.ability.url);
