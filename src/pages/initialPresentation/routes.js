@@ -3,6 +3,7 @@ import initialPresentationSitemap from './sitemap';
 
 const initialPresentationRoutes = [
   {
+    page: initialPresentationSitemap.page,
     path: initialPresentationSitemap.path,
     component: InitialPresentation,
     exact: true,

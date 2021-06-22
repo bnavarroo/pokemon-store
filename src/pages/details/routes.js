@@ -3,6 +3,7 @@ import detailsSitemap from './sitemap';
 
 const DetailsRoutes = [
   {
+    page: detailsSitemap.page,
     path: `${detailsSitemap.path}/:refProduto`,
     component: DetailsPage,
     exact: false,

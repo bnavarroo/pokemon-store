@@ -13,9 +13,9 @@ const InitialPresentation = () => (
       <h2 className="page-subtitle">Gostaria de se identificar?</h2>
       <div className="d-flex flex-column">
         {
-          INITIAL_PRESENTATION_BUTTONS.map((button, index) => (
+          INITIAL_PRESENTATION_BUTTONS.map((button) => (
             <Link
-              key={`initial-presentation-btn-${index}`}
+              key={`initial-presentation-btn-${button.id}`}
               to={button.linkTo}
               className="btn btn-light initial-presentation-btn btn-animated mt-3"
             >

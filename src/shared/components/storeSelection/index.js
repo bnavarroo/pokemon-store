@@ -18,10 +18,10 @@ const StoreSelection = ({ handleSetStoreSelected }) => {
     <div className="store-selection-cmp">
       <CardGroup>
         {
-          STORES.map((store, index) => (
+          STORES.map((store) => (
             <Card
               className={`store-selection-cmp-card py-3 position-relative ${isActiveStore(store) ? 'active' : ''}`}
-              key={`store-selection-cmp-card-${index}`}
+              key={`store-selection-cmp-card-${store.type}`}
               onClick={() => {
                 dispatch(storeActions.setStoreSelected(store[STORE_ATTR_REF]));
                 if (handleSetStoreSelected) handleSetStoreSelected();

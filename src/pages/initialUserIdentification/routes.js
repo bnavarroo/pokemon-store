@@ -3,6 +3,7 @@ import initialUserIdentificationSitemap from './sitemap';
 
 const InitialUserIdentificationRoutes = [
   {
+    page: initialUserIdentificationSitemap.page,
     path: initialUserIdentificationSitemap.path,
     component: InitialUserIdentification,
     exact: true,

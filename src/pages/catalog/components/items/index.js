@@ -15,8 +15,8 @@ const CatalogPageItems = () => {
     <>
       <Row>
         {
-          listPaginated.items.map((product, index) => (
-            <Col xs={12} sm={6} md={4} lg={3} key={`product-${index}`} id={`product-${product.id}`} className="py-3">
+          listPaginated.items.map((product) => (
+            <Col xs={12} sm={6} md={4} lg={3} key={`key-product-${product.id}`} id={`product-${product.id}`} className="py-3">
               <CatalogPageItemsProduct product={product} />
             </Col>
           ))

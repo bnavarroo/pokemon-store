@@ -23,7 +23,7 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       {
-        RouteMap.map((route, index) => <Route key={`route_${index}`} exact={route.exact} path={route.path} component={route.component} />)
+        RouteMap.map((route) => <Route key={`route_${route.page}`} exact={route.exact} path={route.path} component={route.component} />)
       }
       <Redirect to={notFoundRoutes[0].path} />
     </Switch>
