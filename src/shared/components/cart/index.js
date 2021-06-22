@@ -6,6 +6,7 @@ import { Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import cartActions from '../../redux/cart/actions';
+import Sitemap from '../../../_config/sitemap';
 import { getCurrentCart } from '../../../utilities/functions/cart';
 import { numberToLocaleString } from '../../../utilities/converters';
 import { CART_ITEM_ATTR_REF } from '../../../constants/cart';
@@ -89,7 +90,7 @@ const Cart = ({ backToCatalog }) => {
             <div className="cart-cmp-empty-text">Parece que você ainda não capturou nenhum Pokémon</div>
             {
               backToCatalog && (
-                <Link to="/catalogo" className="btn btn-link px-0">Voltar para o catálogo</Link>
+                <Link to={Sitemap.CatalogPage.path} className="btn btn-link px-0">Voltar para o catálogo</Link>
               )
             }
           </div>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Modal, Button } from 'react-bootstrap';
+import Sitemap from '../../../../_config/sitemap';
 import cartActions from '../../../../shared/redux/cart/actions';
 import Pikachu from '../../../../_assets/img/pikachu_smiling.png';
 import './styles/index.scss';
@@ -13,7 +14,7 @@ const CartPageModal = ({ show }) => {
 
   const handleClose = () => {
     dispatch(cartActions.clearCart());
-    history.push('/', { from: 'CartPageModal' });
+    history.push(Sitemap.InitialPresentationPage.path, { from: 'CartPageModal' });
   };
 
   return (

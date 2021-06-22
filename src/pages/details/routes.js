@@ -1,9 +1,10 @@
 import DetailsPage from './page';
+import detailsSitemap from './sitemap';
 
 const DetailsRoutes = [
   {
+    path: `${detailsSitemap.path}/:refProduto`,
     component: DetailsPage,
-    path: '/detalhes/:refProduto',
     exact: false,
   },
 ];

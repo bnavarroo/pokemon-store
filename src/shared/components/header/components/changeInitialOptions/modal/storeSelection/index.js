@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
+import Sitemap from '../../../../../../../_config/sitemap';
 import StoreSelection from '../../../../../storeSelection';
 import './styles/index.scss';
 
@@ -10,9 +11,9 @@ const StoreSelectionModal = ({ show, handleClose }) => {
 
   const onSetStoreSelected = () => {
     handleClose();
-    const redirectUrl = '/catalogo';
+    const redirectUrl = Sitemap.CatalogPage.path;
     if (history.location.pathname !== redirectUrl) {
-      history.push('/catalogo', { from: 'StoreSelectionModal' });
+      history.push(redirectUrl, { from: 'StoreSelectionModal' });
     }
   };
 

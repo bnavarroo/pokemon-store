@@ -34,17 +34,6 @@ export const isNullOrStringEmpty = (value) => isNull(value) || stringIsEmpty(val
 export const isNullOrUndefined = (value) => isNull(value) || isUndefined(value);
 
 /**
- * Retorna um decimal randômico baseado nos parâmetros recebidos
- * @param {int} id
- * @param {int} typeId
- * @returns {decimal}
-*/
-export function generateValueByIdAndType(id) {
-  const localId = id <= 0 ? 1 : id;
-  return (localId * 0.75); // .toFixed(2);
-}
-
-/**
  * Faz a rolagem para o topo da págin
  *
 */

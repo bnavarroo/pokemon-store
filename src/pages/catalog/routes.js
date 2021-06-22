@@ -1,9 +1,10 @@
 import CatalogPage from './page';
+import catalogSitemap from './sitemap';
 
 const catalogRoutes = [
   {
+    path: `${catalogSitemap.path}/:filtro?`,
     component: CatalogPage,
-    path: '/catalogo/:filtro?',
     exact: false,
   },
 ];

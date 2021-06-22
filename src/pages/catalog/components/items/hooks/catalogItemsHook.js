@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-
 import CatalogAPI from '../../../../../shared/api/catalog';
+import Sitemap from '../../../../../_config/sitemap';
 import { isNullOrUndefined } from '../../../../../utilities/functions/general';
 import useListPaginated from '../../../../../utilities/hooks/paginatedListHook';
 import { STORE_ATTR_REF } from '../../../../../constants/stores';
@@ -36,7 +36,7 @@ function useCatalogItems() {
   }, [filtro, store]);
 
   useEffect(() => {
-    if (!isNullOrUndefined(prevStore) && (prevStore[STORE_ATTR_REF] !== store[STORE_ATTR_REF])) history.replace('/catalogo/');
+    if (!isNullOrUndefined(prevStore) && (prevStore[STORE_ATTR_REF] !== store[STORE_ATTR_REF])) history.replace(Sitemap.CatalogPage.path);
   }, [history, prevStore, store]);
 
   return {

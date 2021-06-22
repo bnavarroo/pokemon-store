@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 import WelcomeTemplate from '../../templates/welcome';
 import UserIdentification from '../../shared/components/userIdentification';
-
+import Sitemap from '../../_config/sitemap';
 import PRIMARY_BUTTON_SETTINGS from './constants';
 
 import './styles/page.scss';
@@ -15,7 +15,7 @@ const InitialUserIdentification = () => {
     <WelcomeTemplate>
       <div className="initial-user-presentation">
         <UserIdentification
-          handleSetUserName={() => history.push('/selecionarLoja', { from: 'InitialUserIdentification' })}
+          handleSetUserName={() => history.push(Sitemap.InitialStoreSelectionPage.path, { from: 'InitialUserIdentification' })}
           primaryButtonSettings={PRIMARY_BUTTON_SETTINGS}
         >
           <Link

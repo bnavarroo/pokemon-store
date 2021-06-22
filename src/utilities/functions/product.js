@@ -1,5 +1,15 @@
-import { generateValueByIdAndType } from './general';
 import { PRODUCT_IMAGE_SETTINGS } from '../../constants/product';
+
+/**
+ * Retorna um decimal randômico baseado nos parâmetros recebidos
+ * @param {int} id
+ * @param {int} typeId
+ * @returns {decimal}
+*/
+function generateValueById(id) {
+  const localId = id <= 0 ? 1 : id;
+  return (localId * 0.75); // .toFixed(2);
+}
 
 /**
  * Retorna a estrutura básica de um produto/pokemón
@@ -12,7 +22,7 @@ export function getBaseProduct(product) {
   return {
     id,
     name,
-    price: generateValueByIdAndType(id),
+    price: generateValueById(id),
   };
 }
 

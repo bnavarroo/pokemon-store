@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import Cart from '../../../cart';
 import CheckoutButton from '../../../buttons/checkout';
+import Sitemap from '../../../../../_config/sitemap';
 import { getCurrentCart } from '../../../../../utilities/functions/cart';
 import { numberToLocaleString } from '../../../../../utilities/converters';
 import { STORE_ATTR_REF } from '../../../../../constants/stores';
@@ -47,7 +48,7 @@ const HeaderMinicart = () => {
               <div className="minicart-cmp-cart-content-footer-text">Total:</div>
               <b className="minicart-cmp-cart-content-footer-total">{ numberToLocaleString(currentCart.totalCart) }</b>
             </div>
-            <CheckoutButton text="Finalizar Capturas" handleClick={() => history.push('/checkout', { from: 'HeaderMinicart' })} disabled={currentCart.totalItems === 0} />
+            <CheckoutButton text="Finalizar Capturas" handleClick={() => history.push(Sitemap.CartPage.path, { from: 'HeaderMinicart' })} disabled={currentCart.totalItems === 0} />
             <Button variant="link" onClick={hideMinicart}>Continuar capturando</Button>
           </div>
         </div>

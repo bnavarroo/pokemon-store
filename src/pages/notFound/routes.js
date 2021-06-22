@@ -1,9 +1,10 @@
 import NotFound from './page';
+import notFoundSitemap from './sitemap';
 
 const notFoundRoutes = [
   {
+    path: notFoundSitemap.path,
     component: NotFound,
-    path: '/404',
     exact: true,
   },
 ];

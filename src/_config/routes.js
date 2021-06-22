@@ -9,7 +9,7 @@ import catalogRoutes from '../pages/catalog/routes';
 import cartRoutes from '../pages/cart/routes';
 import DetailsRoutes from '../pages/details/routes';
 
-const allRoutes = [
+const RouteMap = [
   ...notFoundRoutes,
   ...initialPresentationRoutes,
   ...InitialUserIdentificationRoutes,
@@ -23,7 +23,7 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       {
-        allRoutes.map((route, index) => <Route key={`route_${index}`} exact={route.exact} path={route.path} component={route.component} />)
+        RouteMap.map((route, index) => <Route key={`route_${index}`} exact={route.exact} path={route.path} component={route.component} />)
       }
       <Redirect to={notFoundRoutes[0].path} />
     </Switch>

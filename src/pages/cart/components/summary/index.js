@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CheckoutButton from '../../../../shared/components/buttons/checkout';
+import Sitemap from '../../../../_config/sitemap';
 import { getCurrentCart } from '../../../../utilities/functions/cart';
 import { numberToLocaleString } from '../../../../utilities/converters';
 import { STORE_ATTR_REF } from '../../../../constants/stores';
@@ -30,7 +31,7 @@ const CartPageSummary = ({ handleFinish }) => {
       </div>
       <div className="cart-summary-buttons">
         <CheckoutButton text="Finalizar Capturas" handleClick={handleFinish} disabled={currentCart.totalItems === 0} />
-        <Link to="/catalogo" className="btn btn-link w-100">Capturar mais Pokémon</Link>
+        <Link to={Sitemap.CatalogPage.path} className="btn btn-link w-100">Capturar mais Pokémon</Link>
       </div>
     </div>
   );

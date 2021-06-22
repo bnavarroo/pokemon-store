@@ -1,9 +1,10 @@
 import InitialPresentation from './page';
+import initialPresentationSitemap from './sitemap';
 
 const initialPresentationRoutes = [
   {
+    path: initialPresentationSitemap.path,
     component: InitialPresentation,
-    path: '/',
     exact: true,
   },
 ];

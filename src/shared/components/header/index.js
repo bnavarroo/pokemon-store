@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import HeaderSearch from './components/search';
 import HeaderChangeInitialOptions from './components/changeInitialOptions';
 import HeaderMinicart from './components/minicart';
+import Sitemap from '../../../_config/sitemap';
 import { STORE_ATTR_REF, STORES } from '../../../constants/stores';
 import './styles/index.scss';
 
@@ -18,7 +19,7 @@ const Header = () => {
       <header className="header-cmp centralized-y py-2 __bg-store-primary">
         <Container className="centralized-y justify-content-between flex-wrap">
           <div className="header-cmp-logo-wrapper order-2 order-lg-1">
-            <Link to="/catalogo">
+            <Link to={Sitemap.CatalogPage.path}>
               <img className="header-cmp-logo-img img-fluid" src={logo} alt={store.name} title={store.name} />
             </Link>
           </div>
