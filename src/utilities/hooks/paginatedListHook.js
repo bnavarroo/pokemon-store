@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { LIST_ITEMS_PER_PAGE } from '../../constants/list';
 
 const initialList = {
@@ -20,7 +20,7 @@ function useListPaginated() {
   * @param {function} callback Função que DEVE RETORNAR UMA PROMISE com os dados para atualização do estado de listPaginated
   * @returns {void}
   */
-  const setListPaginatedDataFromCallback = async (callback) => {
+  const setListPaginatedDataFromCallback = useCallback(async (callback) => {
     setShowLoadingComponent(true);
     const result = await callback();
     const { page, perPage, totalPages, hasPrevious, hasNext, items, totalItems } = result;
@@ -34,7 +34,7 @@ function useListPaginated() {
       totalItems: totalItems ?? initialList.totalItems,
     });
     setShowLoadingComponent(false);
-  };
+  }, []);
 
   return {
     listPaginated,
