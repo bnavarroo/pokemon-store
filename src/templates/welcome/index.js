@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { Container, Row, Col } from 'react-bootstrap';
+import { scrollToTop } from '../../utilities/functions/general';
 import Logo from '../../_assets/img/pokemon-logo.png';
 import './styles/index.scss';
 
 const WelcomeTemplate = ({ children }) => {
   const { store } = useSelector((state) => state.storeReducer);
+  useEffect(() => { scrollToTop(); });
 
   return (
     <div className={`welcome-tmp ${store.type}-store`}>
