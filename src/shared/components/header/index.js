@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -38,4 +38,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

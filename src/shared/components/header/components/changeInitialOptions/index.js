@@ -37,9 +37,17 @@ const HeaderChangeInitialOptions = () => {
           <FontAwesomeIcon className="text-white" icon={faAngleDown} />
         </Button>
       </OverlayTrigger>
+      {
+        showModalStore && (
+          <StoreSelectionModal show={showModalStore} handleClose={() => setShowModalStore(false)} />
+        )
+      }
 
-      <StoreSelectionModal show={showModalStore} handleClose={() => setShowModalStore(false)} />
-      <UserIdentificationModal show={showModalUser} handleClose={() => setShowModalUser(false)} />
+      {
+        showModalUser && (
+          <UserIdentificationModal show={showModalUser} handleClose={() => setShowModalUser(false)} />
+        )
+      }
     </div>
   );
 };
