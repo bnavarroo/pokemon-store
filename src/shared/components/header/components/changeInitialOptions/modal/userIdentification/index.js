@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
-import UserIdentification from '../../../../../userIdentification';
+import UserIdentification from '~/shared/components/userIdentification';
+
 import './styles/index.scss';
 
 const UserIdentificationModal = ({ show, handleClose }) => (

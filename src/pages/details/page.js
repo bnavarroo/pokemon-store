@@ -1,8 +1,9 @@
 import React from 'react';
 import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap';
-import CatalogTemplate from '../../templates/catalog';
-import LoadingComponent from '../../shared/components/loading';
-import BuyButton from '../../shared/components/buttons/buy';
+import CatalogTemplate from '~/templates/catalog';
+import LoadingComponent from '~/shared/components/loading';
+import BuyButton from '~/shared/components/buttons/buy';
+
 import useDetails from './hooks/detailsHook';
 import './styles/page.scss';
 

@@ -4,8 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { CardGroup, Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import storeActions from '../../redux/store/actions';
-import { STORES, STORE_ATTR_REF } from '../../../constants/stores';
+import storeActions from '~/shared/redux/store/actions';
+import { STORES, STORE_ATTR_REF } from '~/constants/stores';
+
 import './styles/index.scss';
 
 const StoreSelection = ({ handleSetStoreSelected }) => {

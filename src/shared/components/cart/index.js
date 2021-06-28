@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
+import { getCurrentCart } from '~/utilities/functions/cart';
+import { STORE_ATTR_REF } from '~/constants/stores';
+
 import TableCart from './components/table';
 import EmptyCart from './components/empty';
-import { getCurrentCart } from '../../../utilities/functions/cart';
-import { STORE_ATTR_REF } from '../../../constants/stores';
 import './styles/index.scss';
 
 const Cart = ({ backToCatalog }) => {

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import CheckoutTemplate from '../../templates/checkout';
+import CheckoutTemplate from '~/templates/checkout';
+import Cart from '~/shared/components/cart';
+
 import CartPageSummary from './components/summary';
 import CartPageModal from './components/modal';
-import Cart from '../../shared/components/cart';
 import './styles/index.scss';
 
 const CartPage = () => {
@@ -25,7 +26,11 @@ const CartPage = () => {
             <CartPageSummary handleFinish={() => onCheckoutFinish()} />
           </Col>
         </Row>
-        <CartPageModal show={showModal} />
+        {
+          showModal && (
+            <CartPageModal show={showModal} />
+          )
+        }
       </Container>
     </CheckoutTemplate>
   );

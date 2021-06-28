@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
-import Http from '../../../utilities/http';
-import { isNullOrUndefined } from '../../../utilities/functions/general';
-import { getBaseProduct } from '../../../utilities/functions/product';
-import URL_BASE_API from '../constants';
+import Http from '~/utilities/http';
+import { isNullOrUndefined } from '~/utilities/functions/general';
+import { getBaseProduct } from '~/utilities/functions/product';
+import URL_BASE_API from '~/shared/api/constants';
 
 const urlBase = `${URL_BASE_API}/pokemon`;
 const mainImageObjKey = 'official-artwork';

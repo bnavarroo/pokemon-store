@@ -2,7 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Pagination } from 'react-bootstrap';
-import { scrollToTop } from '../../../utilities/functions/general';
+import { scrollToTop } from '~/utilities/functions/general';
+
 import './styles/index.scss';
 
 const PaginationList = ({ totalPages, currentPage, handleClick }) => {

@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import HeaderSearch from './components/search';
 import HeaderChangeInitialOptions from './components/changeInitialOptions';
 import HeaderMinicart from './components/minicart';
-import Sitemap from '../../../_config/sitemap';
-import { STORE_ATTR_REF, STORES } from '../../../constants/stores';
+import Sitemap from '~/_config/sitemap';
+import { STORE_ATTR_REF, STORES } from '~/constants/stores';
+
 import './styles/index.scss';
 
 const Header = () => {

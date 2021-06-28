@@ -3,8 +3,9 @@ import { useHistory } from 'react-router-dom';
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import Sitemap from '../../../../../_config/sitemap';
-import { stringToUrlParam } from '../../../../../utilities/converters';
+import Sitemap from '~/_config/sitemap';
+import { stringToUrlParam } from '~/utilities/converters';
+
 import './styles/index.scss';
 
 const HeaderSearch = () => {

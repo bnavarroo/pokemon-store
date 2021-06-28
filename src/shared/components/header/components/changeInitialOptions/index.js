@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { OverlayTrigger, Popover, Button, ListGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+
 import UserIdentificationModal from './modal/userIdentification';
 import StoreSelectionModal from './modal/storeSelection';
 import './styles/index.scss';

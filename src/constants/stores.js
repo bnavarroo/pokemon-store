@@ -1,6 +1,6 @@
-import RockLogo from '../_assets/img/rock-logo.png';
-import FireLogo from '../_assets/img/fire-logo.png';
-import WaterLogo from '../_assets/img/water-logo.png';
+import RockLogo from '~/_assets/img/rock-logo.png';
+import FireLogo from '~/_assets/img/fire-logo.png';
+import WaterLogo from '~/_assets/img/water-logo.png';
 
 export const STORES = [
   {

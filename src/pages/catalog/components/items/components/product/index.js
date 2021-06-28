@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
-import BuyButton from '../../../../../../shared/components/buttons/buy';
-import Sitemap from '../../../../../../_config/sitemap';
-import { numberToLocaleString } from '../../../../../../utilities/converters';
+import BuyButton from '~/shared/components/buttons/buy';
+import Sitemap from '~/_config/sitemap';
+import { numberToLocaleString } from '~/utilities/converters';
+
 import useCatalogItemsProduct from './hooks/catalogItemsProductHook';
 import './styles/index.scss';
 

@@ -1,10 +1,10 @@
 /* eslint-disable no-plusplus */
-import Http from '../../../utilities/http';
-import { isNullOrUndefined } from '../../../utilities/functions/general';
-import { getBaseProduct, getBaseProductImage } from '../../../utilities/functions/product';
-import { urlParamToString } from '../../../utilities/converters';
-import URL_BASE_API from '../constants';
-import { LIST_ITEMS_PER_PAGE } from '../../../constants/list';
+import Http from '~/utilities/http';
+import { isNullOrUndefined } from '~/utilities/functions/general';
+import { getBaseProduct, getBaseProductImage } from '~/utilities/functions/product';
+import { urlParamToString } from '~/utilities/converters';
+import { LIST_ITEMS_PER_PAGE } from '~/constants/list';
+import URL_BASE_API from '~/shared/api/constants';
 
 const urlBase = `${URL_BASE_API}/type`;
 const keyItems = 'pokemon';

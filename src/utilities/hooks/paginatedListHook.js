@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { LIST_ITEMS_PER_PAGE } from '../../constants/list';
+import { LIST_ITEMS_PER_PAGE } from '~/constants/list';
 
 const initialList = {
   page: 1,

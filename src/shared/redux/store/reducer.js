@@ -1,5 +1,5 @@
 import TYPES from './actionTypes';
-import { getStoreDefault, getStoreByRef } from '../../../utilities/functions/store';
+import { getStoreDefault, getStoreByRef } from '~/utilities/functions/store';
 
 const initialState = { store: getStoreDefault() };
 

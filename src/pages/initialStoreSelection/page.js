@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import WelcomeTemplate from '../../templates/welcome';
-import StoreSelection from '../../shared/components/storeSelection';
-import Sitemap from '../../_config/sitemap';
+import WelcomeTemplate from '~/templates/welcome';
+import StoreSelection from '~/shared/components/storeSelection';
+import Sitemap from '~/_config/sitemap';
 
 import './styles/page.scss';
 

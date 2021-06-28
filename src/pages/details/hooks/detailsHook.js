@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import useProduct from '../../../utilities/hooks/productHook';
-import ProductAPI from '../../../shared/api/product';
+import useProduct from '~/utilities/hooks/productHook';
+import ProductAPI from '~/shared/api/product';
 
 function useDetails() {
   const { refProduto } = useParams();

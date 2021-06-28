@@ -1,6 +1,6 @@
 import { combineReducers, createStore } from 'redux';
-import rootReducer from './reducers';
-import { saveStateToSessionStorage, loadStateFromSessionStorage } from './storage';
+import rootReducer from '~/_config/reducers';
+import { saveStateToSessionStorage, loadStateFromSessionStorage } from '~/_config/storage';
 
 const Store = createStore(combineReducers({ ...rootReducer }), loadStateFromSessionStorage());
 

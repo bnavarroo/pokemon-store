@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import WelcomeTemplate from '~/templates/welcome';
+import UserIdentification from '~/shared/components/userIdentification';
+import Sitemap from '~/_config/sitemap';
 
-import WelcomeTemplate from '../../templates/welcome';
-import UserIdentification from '../../shared/components/userIdentification';
-import Sitemap from '../../_config/sitemap';
 import PRIMARY_BUTTON_SETTINGS from './constants';
-
 import './styles/page.scss';
 
 const InitialUserIdentification = () => {

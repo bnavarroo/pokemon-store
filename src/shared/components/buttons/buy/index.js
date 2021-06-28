@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ActionButton, { ACTION_BUTTON_ICON_TYPES } from '../action';
-import PokeballIcon from '../../../../_assets/img/pokeball-icon.png';
+import ActionButton, { ACTION_BUTTON_ICON_TYPES } from '~/shared/components/buttons/action';
+import PokeballIcon from '~/_assets/img/pokeball-icon.png';
+
 import './styles/index.scss';
 
 const BuyButton = ({ handleClick, text, disabled }) => (

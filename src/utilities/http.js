@@ -1,4 +1,4 @@
-import { ObjectToUrlParams, ObjectToFormData } from './converters';
+import { ObjectToUrlParams, ObjectToFormData } from '~/utilities/converters';
 
 function ExecuteHttpRequest(url, requestData) {
   return fetch(url, requestData).then((response) => response.json());

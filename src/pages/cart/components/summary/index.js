@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import CheckoutButton from '../../../../shared/components/buttons/checkout';
-import Sitemap from '../../../../_config/sitemap';
-import { getCurrentCart } from '../../../../utilities/functions/cart';
-import { numberToLocaleString } from '../../../../utilities/converters';
-import { STORE_ATTR_REF } from '../../../../constants/stores';
+import CheckoutButton from '~/shared/components/buttons/checkout';
+import Sitemap from '~/_config/sitemap';
+import { getCurrentCart } from '~/utilities/functions/cart';
+import { numberToLocaleString } from '~/utilities/converters';
+import { STORE_ATTR_REF } from '~/constants/stores';
+
 import './styles/index.scss';
 
 const CartPageSummary = ({ handleFinish }) => {

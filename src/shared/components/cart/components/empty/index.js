@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Sitemap from '../../../../../_config/sitemap';
+import Sitemap from '~/_config/sitemap';
+
 import './styles/index.scss';
 
 const CartEmpty = ({ showBtnBack }) => (

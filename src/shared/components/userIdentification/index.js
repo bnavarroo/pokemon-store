@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FormGroup, FormLabel, FormControl, Button } from 'react-bootstrap';
-import userActions from '../../redux/user/actions';
+import userActions from '~shared/redux/user/actions';
 
 const UserIdentification = ({ handleSetUserName, primaryButtonSettings, children }) => {
   const initialValue = useSelector((state) => state.userReducer.userName);

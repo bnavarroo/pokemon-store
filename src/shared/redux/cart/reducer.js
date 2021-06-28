@@ -1,7 +1,8 @@
+import { getCurrentCart } from '~/utilities/functions/cart';
+import { CART_ATTR_REF } from '~/constants/cart';
+
 import TYPES from './actionTypes';
 import { getInitCarts, getNewCartOnUpdate, getNewCartOnRemove } from './functions';
-import { getCurrentCart } from '../../../utilities/functions/cart';
-import { CART_ATTR_REF } from '../../../constants/cart';
 
 const initialState = { carts: getInitCarts() };
 

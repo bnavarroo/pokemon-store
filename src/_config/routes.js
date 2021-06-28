@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
-import notFoundRoutes from '../pages/notFound/routes';
-import initialPresentationRoutes from '../pages/initialPresentation/routes';
-import InitialUserIdentificationRoutes from '../pages/initialUserIdentification/routes';
-import initialStoreSelectionRoutes from '../pages/initialStoreSelection/routes';
-import catalogRoutes from '../pages/catalog/routes';
-import cartRoutes from '../pages/cart/routes';
-import DetailsRoutes from '../pages/details/routes';
+import notFoundRoutes from '~/pages/notFound/routes';
+import initialPresentationRoutes from '~/pages/initialPresentation/routes';
+import InitialUserIdentificationRoutes from '~/pages/initialUserIdentification/routes';
+import initialStoreSelectionRoutes from '~/pages/initialStoreSelection/routes';
+import catalogRoutes from '~/pages/catalog/routes';
+import cartRoutes from '~/pages/cart/routes';
+import DetailsRoutes from '~/pages/details/routes';
 
 const RouteMap = [
   ...notFoundRoutes,

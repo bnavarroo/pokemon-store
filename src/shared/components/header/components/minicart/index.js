@@ -6,12 +6,13 @@ import { useHistory } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
-import Cart from '../../../cart';
-import CheckoutButton from '../../../buttons/checkout';
-import Sitemap from '../../../../../_config/sitemap';
-import { getCurrentCart } from '../../../../../utilities/functions/cart';
-import { numberToLocaleString } from '../../../../../utilities/converters';
-import { STORE_ATTR_REF } from '../../../../../constants/stores';
+import Cart from '~/shared/components/cart';
+import CheckoutButton from '~/shared/components/buttons/checkout';
+import Sitemap from '~/_config/sitemap';
+import { getCurrentCart } from '~/utilities/functions/cart';
+import { numberToLocaleString } from '~/utilities/converters';
+import { STORE_ATTR_REF } from '~/constants/stores';
+
 import './styles/index.scss';
 
 const HeaderMinicart = () => {

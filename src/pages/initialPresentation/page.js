@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-import WelcomeTemplate from '../../templates/welcome';
+import WelcomeTemplate from '~/templates/welcome';
 
 import INITIAL_PRESENTATION_BUTTONS from './constants';
-
 import './styles/page.scss';
 
 const InitialPresentation = () => (

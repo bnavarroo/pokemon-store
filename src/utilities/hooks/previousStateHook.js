@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { isNullOrUndefined } from '../functions/general';
+import { isNullOrUndefined } from '~/utilities/functions/general';
 
 function usePreviousState(value) {
   const ref = useRef();

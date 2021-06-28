@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LoadingIcon from '../../../_assets/img/loading.gif';
+import LoadingIcon from '~/_assets/img/loading.gif';
+
 import './styles/index.scss';
 
 const LoadingComponent = ({ visible, full }) => (

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import CatalogTemplate from '../../templates/catalog';
+import CatalogTemplate from '~/templates/catalog';
+
 import CatalogPageFilter from './components/filter';
 import CatalogPageItems from './components/items';
 import './styles/index.scss';

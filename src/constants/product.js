@@ -1,4 +1,4 @@
-import NotAvailableImg from '../_assets/img/not-available.png';
+import NotAvailableImg from '~/_assets/img/not-available.png';
 
 export const PRODUCT_IMAGE_SETTINGS = {
   strReplace: '{id}',

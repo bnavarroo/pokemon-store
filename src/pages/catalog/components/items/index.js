@@ -1,11 +1,12 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import LoadingComponent from '../../../../shared/components/loading';
-import PaginationList from '../../../../shared/components/pagination';
+import LoadingComponent from '~/shared/components/loading';
+import PaginationList from '~/shared/components/pagination';
+import { isNullOrUndefined } from '~/utilities/functions/general';
+import Pikachu from '~/_assets/img/pikachu.png';
+
 import CatalogPageItemsProduct from './components/product';
 import useCatalogItems from './hooks/catalogItemsHook';
-import { isNullOrUndefined } from '../../../../utilities/functions/general';
-import Pikachu from '../../../../_assets/img/pikachu.png';
 import './styles/index.scss';
 
 const CatalogPageItems = () => {

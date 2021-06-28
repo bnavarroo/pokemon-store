@@ -1,9 +1,9 @@
 import { useEffect, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import CatalogAPI from '../../../../../shared/api/catalog';
-import useListPaginated from '../../../../../utilities/hooks/paginatedListHook';
-import { STORE_ATTR_REF } from '../../../../../constants/stores';
+import CatalogAPI from '~/shared/api/catalog';
+import useListPaginated from '~/utilities/hooks/paginatedListHook';
+import { STORE_ATTR_REF } from '~/constants/stores';
 
 function useCatalogItems() {
   const { store } = useSelector((state) => state.storeReducer);

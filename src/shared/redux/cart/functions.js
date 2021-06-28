@@ -1,5 +1,5 @@
-import { CART_ITEM_ATTR_REF } from '../../../constants/cart';
-import { STORES, STORE_ATTR_REF } from '../../../constants/stores';
+import { CART_ITEM_ATTR_REF } from '~/constants/cart';
+import { STORES, STORE_ATTR_REF } from '~/constants/stores';
 
 /**
  * Retorna todos os carrinhos disponíveis

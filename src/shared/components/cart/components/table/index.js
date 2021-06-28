@@ -4,9 +4,10 @@ import { useDispatch } from 'react-redux';
 import { Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import cartActions from '../../../../redux/cart/actions';
-import { numberToLocaleString } from '../../../../../utilities/converters';
-import { CART_ITEM_ATTR_REF } from '../../../../../constants/cart';
+import cartActions from '~/shared/redux/cart/actions';
+import { numberToLocaleString } from '~/utilities/converters';
+import { CART_ITEM_ATTR_REF } from '~/constants/cart';
+
 import './styles/index.scss';
 
 const TableCart = ({ items, storeRef }) => {

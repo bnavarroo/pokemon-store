@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
-import Sitemap from '../../../../../../../_config/sitemap';
-import StoreSelection from '../../../../../storeSelection';
+import Sitemap from '~/_config/sitemap';
+import StoreSelection from '~/shared/components/storeSelection';
+
 import './styles/index.scss';
 
 const StoreSelectionModal = ({ show, handleClose }) => {

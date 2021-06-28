@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import cartActions from '../../shared/redux/cart/actions';
-import { getCurrentCart } from '../functions/cart';
-import { getBaseProduct, getBaseProductImage } from '../functions/product';
-import { STORE_ATTR_REF } from '../../constants/stores';
-import { CART_ITEM_ATTR_REF } from '../../constants/cart';
-import { PRODUCT_IMAGE_NOTFOUND } from '../../constants/product';
+import cartActions from '~/shared/redux/cart/actions';
+import { getCurrentCart } from '~/utilities/functions/cart';
+import { getBaseProduct, getBaseProductImage } from '~/utilities/functions/product';
+import { STORE_ATTR_REF } from '~/constants/stores';
+import { CART_ITEM_ATTR_REF } from '~/constants/cart';
+import { PRODUCT_IMAGE_NOTFOUND } from '~/constants/product';
 
 function useProduct(productRef) {
   const dispatch = useDispatch();

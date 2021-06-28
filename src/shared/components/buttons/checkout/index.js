@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import ActionButton, { ACTION_BUTTON_ICON_TYPES } from '../action';
+import ActionButton, { ACTION_BUTTON_ICON_TYPES } from '~/shared/components/buttons/action';
+
 import './styles/index.scss';
 
 const CheckoutButton = ({ handleClick, text, disabled }) => (

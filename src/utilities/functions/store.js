@@ -1,4 +1,4 @@
-import { STORES, STORE_ATTR_REF } from '../../constants/stores';
+import { STORES, STORE_ATTR_REF } from '~/constants/stores';
 
 /**
  * Converte uma store para modelo utilizado pelo estado global, somente com as informações necessárias

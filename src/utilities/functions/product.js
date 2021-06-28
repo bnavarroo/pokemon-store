@@ -1,4 +1,4 @@
-import { PRODUCT_IMAGE_SETTINGS } from '../../constants/product';
+import { PRODUCT_IMAGE_SETTINGS } from '~/constants/product';
 
 /**
  * Retorna um decimal randômico baseado nos parâmetros recebidos

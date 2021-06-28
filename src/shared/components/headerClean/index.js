@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
-import { STORE_ATTR_REF, STORES } from '../../../constants/stores';
+import { STORE_ATTR_REF, STORES } from '~/constants/stores';
+
 import './styles/index.scss';
 
 const HeaderClean = () => {

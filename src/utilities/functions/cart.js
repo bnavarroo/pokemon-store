@@ -1,4 +1,4 @@
-import { CART_ATTR_REF } from '../../constants/cart';
+import { CART_ATTR_REF } from '~/constants/cart';
 
 /**
  * Devolve o carrinho atual

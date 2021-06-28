@@ -3,8 +3,9 @@ import { useHistory, useParams } from 'react-router-dom';
 import { Col, Row, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import Sitemap from '../../../../_config/sitemap';
-import { isNullOrUndefined } from '../../../../utilities/functions/general';
+import Sitemap from '~/_config/sitemap';
+import { isNullOrUndefined } from '~/utilities/functions/general';
+
 import './styles/index.scss';
 
 const CatalogPageFilter = () => {

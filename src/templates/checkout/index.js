@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import HeaderClean from '../../shared/components/headerClean';
-import Footer from '../../shared/components/footer';
-import { scrollToTop } from '../../utilities/functions/general';
+import HeaderClean from '~/shared/components/headerClean';
+import Footer from '~/shared/components/footer';
+import { scrollToTop } from '~/utilities/functions/general';
+
 import './styles/index.scss';
 
 const CheckoutTemplate = ({ children }) => {
