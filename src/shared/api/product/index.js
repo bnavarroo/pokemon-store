@@ -3,6 +3,7 @@ import Http from '~/utilities/http';
 import { isNullOrUndefined } from '~/utilities/functions/general';
 import { getBaseProduct } from '~/utilities/functions/product';
 import URL_BASE_API from '~/shared/api/constants';
+import LANGUAGE from '~/_config/language';
 
 const urlBase = `${URL_BASE_API}/pokemon`;
 const mainImageObjKey = 'official-artwork';
@@ -45,7 +46,10 @@ export default class ProductAPI {
     const abilities = await Promise.all(arrayOfAbilities.map(async (item) => {
       const details = await Http.Get(item.ability.url);
       const { id, name } = details;
-      const effect_entries = details.effect_entries.map((effectEntry) => ({ effect: effectEntry.effect, short_effect: effectEntry.short_effect }));
+      const effect_entries = details.effect_entries
+        .filter((effectFilter) => effectFilter.language.name === LANGUAGE.name)
+        .map((effectEntry) => ({ effect: effectEntry.effect, short_effect: effectEntry.short_effect }));
+
       return { id, name, effect_entries };
     }));
 
