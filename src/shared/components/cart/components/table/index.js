@@ -7,6 +7,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import cartActions from '~/shared/redux/cart/actions';
 import { numberToLocaleString } from '~/utilities/converters';
 import { CART_ITEM_ATTR_REF } from '~/constants/cart';
+import { PRODUCT_IMAGE_NOTFOUND } from '~/constants/product';
 
 import './styles/index.scss';
 
@@ -37,7 +38,15 @@ const TableCart = ({ items, storeRef }) => {
               <Col className="cart-cmp-item-row px-0 mx-0">
                 <div className="cart-cmp-col col-prod">
                   <div className="cart-cmp-item-img">
-                    <img className="img-fluid" src={cartItem.product.image} alt={cartItem.product.name} />
+                    <img
+                      className="img-fluid"
+                      src={cartItem.product.image}
+                      alt={cartItem.product.name}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = PRODUCT_IMAGE_NOTFOUND;
+                      }}
+                    />
                   </div>
                   <div className="cart-cmp-item-name text-capitalize">
                     {cartItem.product.name}<br />
