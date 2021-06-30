@@ -1,5 +1,7 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
+import Sitemap from '~/_config/sitemap';
 import LoadingComponent from '~/shared/components/loading';
 import PaginationList from '~/shared/components/pagination';
 import { isNullOrUndefined } from '~/utilities/functions/general';
@@ -10,7 +12,13 @@ import useCatalogItems from './hooks/catalogItemsHook';
 import './styles/index.scss';
 
 const CatalogPageItems = () => {
-  const { listPaginated, filtro, showLoadingComponent, handleChangePage } = useCatalogItems();
+  const { listPaginated, filtro, showLoadingComponent } = useCatalogItems();
+  const history = useHistory();
+  const onChangePage = (page) => {
+    const baseUrl = `${Sitemap.CatalogPagePagination.path}/${page}`;
+    const url = filtro?.length > 0 ? `${baseUrl}/${filtro}` : baseUrl;
+    history.push(url, { from: 'HeaderSearch' });
+  };
 
   return (
     <>
@@ -35,7 +43,11 @@ const CatalogPageItems = () => {
       {
         listPaginated.items.length > 0 && (
           <div className="centralized">
-            <PaginationList totalPages={listPaginated.totalPages} currentPage={listPaginated.page} handleClick={(page) => handleChangePage(page)} />
+            <PaginationList
+              totalPages={listPaginated.totalPages}
+              currentPage={listPaginated.page}
+              handleClick={(page) => { onChangePage(page); }}
+            />
           </div>
         )
       }

@@ -17,7 +17,11 @@ const Sitemap = {};
   cartSitemap,
   DetailsSitemap,
 ].forEach((nav) => {
-  Sitemap[nav.page] = { ...nav };
+  if (nav.length) {
+    nav.forEach((navItem) => { Sitemap[navItem.page] = { ...navItem }; });
+  } else {
+    Sitemap[nav.page] = { ...nav };
+  }
 });
 
 export default Sitemap;
