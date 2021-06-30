@@ -31,7 +31,7 @@ const CatalogPageItems = () => {
           ))
         }
         {
-          (listPaginated.items.length === 0 && !isNullOrUndefined(filtro)) && (
+          (listPaginated.items.length === 0 && !showLoadingComponent && !isNullOrUndefined(filtro)) && (
             <div className="catalog-no-results centralized flex-column py-3 pt-lg-5 text-center">
               <img src={Pikachu} alt="" className="catalog-no-results-img" />
               <div className="catalog-no-results-title display-4 mt-3 mb-2">Ops...</div>
