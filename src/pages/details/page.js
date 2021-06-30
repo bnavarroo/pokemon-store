@@ -37,10 +37,10 @@ const DetailsPage = () => {
                 <h1 className={`pb-2 border-bottom text-capitalize ${classCenterTextOnMobile}`}>{name}</h1>
                 <div className={`details-experience ${classCenterTextOnMobile}`}>Experiência: {baseExperience}</div>
                 <Row className="align-items-center mb-5">
-                  <Col md={7} sm={12}>
+                  <Col md={7} sm={12} className="py-1">
                     <div className={`display-4 ${classCenterTextOnMobile}`}>{numberToLocaleString(price)}</div>
                   </Col>
-                  <Col md={5} sm={12}>
+                  <Col md={5} sm={12} className="py-1">
                     <BuyButton text={inCart ? 'Capturado' : 'Capturar!'} disabled={inCart} handleClick={addProductInCartFromDetail} />
                   </Col>
                 </Row>
