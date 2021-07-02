@@ -29,6 +29,7 @@ export default class ProductAPI {
       ...pokemonBase,
       baseExperience: result.base_experience,
       moves: result.moves.map((move) => move.move.name),
+      types: result.types.map((typeItem) => typeItem.type.name),
       abilities,
       images: {
         main: result.sprites.other[mainImageObjKey].front_default,

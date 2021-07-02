@@ -17,43 +17,49 @@ const DetailsPage = () => {
     addProductInCartFromDetail,
   } = useDetails();
 
-  const { images, name, price, baseExperience, moves, abilities } = productDetails;
+  const { id, images, name, price, baseExperience, moves, abilities } = productDetails;
   const classCenterTextOnMobile = 'text-center text-md-start';
 
   return (
     <CatalogTemplate>
-      {
-        !showLoadingComponent && (
-          <Container className="my-3 details">
-            <Row>
-              <Col md={5} sm={12}>
-                <img className="img-fluid" src={images?.main} alt={name} />
-                <h5 className={classCenterTextOnMobile}>Miniaturas:</h5>
-                {
-                  images?.thumbs.map((thumbnail) => (<img className="p-2" src={thumbnail} alt={name} key={thumbnail} />))
-                }
+      <Container className="my-3 details">
+        {
+          !showLoadingComponent && id
+            ? (
+              <Row>
+                <Col md={5} sm={12}>
+                  <img className="img-fluid" src={images?.main} alt={name} />
+                  <h5 className={classCenterTextOnMobile}>Miniaturas:</h5>
+                  {
+                    images?.thumbs.map((thumbnail) => (<img className="p-2" src={thumbnail} alt={name} key={thumbnail} />))
+                  }
+                </Col>
+                <Col md={7} sm={12}>
+                  <h1 className={`pb-2 border-bottom text-capitalize ${classCenterTextOnMobile}`}>{name}</h1>
+                  <div className={`details-experience ${classCenterTextOnMobile}`}>Experiência: {baseExperience}</div>
+                  <Row className="align-items-center mb-5">
+                    <Col md={7} sm={12} className="py-1">
+                      <div className={`display-4 ${classCenterTextOnMobile}`}>{numberToLocaleString(price)}</div>
+                    </Col>
+                    <Col md={5} sm={12} className="py-1">
+                      <BuyButton text={inCart ? 'Capturado' : 'Capturar!'} disabled={inCart} handleClick={addProductInCartFromDetail} />
+                    </Col>
+                  </Row>
+                  <Row className="align-items-center mb-5">
+                    <Col>
+                      <DetailsPageTabs abilities={abilities} moves={moves} />
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            )
+            : !showLoadingComponent && (
+              <Col className="text-center p-3">
+                <div>Produto não encontrado</div>
               </Col>
-              <Col md={7} sm={12}>
-                <h1 className={`pb-2 border-bottom text-capitalize ${classCenterTextOnMobile}`}>{name}</h1>
-                <div className={`details-experience ${classCenterTextOnMobile}`}>Experiência: {baseExperience}</div>
-                <Row className="align-items-center mb-5">
-                  <Col md={7} sm={12} className="py-1">
-                    <div className={`display-4 ${classCenterTextOnMobile}`}>{numberToLocaleString(price)}</div>
-                  </Col>
-                  <Col md={5} sm={12} className="py-1">
-                    <BuyButton text={inCart ? 'Capturado' : 'Capturar!'} disabled={inCart} handleClick={addProductInCartFromDetail} />
-                  </Col>
-                </Row>
-                <Row className="align-items-center mb-5">
-                  <Col>
-                    <DetailsPageTabs abilities={abilities} moves={moves} />
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
-        )
-      }
+            )
+          }
+      </Container>
       <LoadingComponent visible={showLoadingComponent} />
     </CatalogTemplate>
   );
