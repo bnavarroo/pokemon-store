@@ -7,6 +7,7 @@ import { numberToLocaleString } from '~/utilities/converters';
 
 import useDetails from './hooks/detailsHook';
 import DetailsPageTabs from './components/tabs';
+import DetailsPageProductNotFound from './components/productNotFound';
 import './styles/page.scss';
 
 const DetailsPage = () => {
@@ -29,9 +30,15 @@ const DetailsPage = () => {
               <Row>
                 <Col md={5} sm={12}>
                   <img className="img-fluid" src={images?.main} alt={name} />
-                  <h5 className={classCenterTextOnMobile}>Miniaturas:</h5>
                   {
-                    images?.thumbs.map((thumbnail) => (<img className="p-2" src={thumbnail} alt={name} key={thumbnail} />))
+                    images?.thumbs.length > 0 && (
+                      <>
+                        <h5 className={classCenterTextOnMobile}>Miniaturas:</h5>
+                        {
+                          images?.thumbs.map((thumbnail) => (<img className="p-2" src={thumbnail} alt={name} key={thumbnail} />))
+                        }
+                      </>
+                    )
                   }
                 </Col>
                 <Col md={7} sm={12}>
@@ -54,9 +61,7 @@ const DetailsPage = () => {
               </Row>
             )
             : !showLoadingComponent && (
-              <Col className="text-center p-3">
-                <div>Produto não encontrado</div>
-              </Col>
+              <DetailsPageProductNotFound />
             )
           }
       </Container>
