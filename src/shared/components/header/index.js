@@ -2,11 +2,12 @@ import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Sitemap from '~/_config/sitemap';
+import { STORE_ATTR_REF, STORES } from '~/constants/stores';
+
 import HeaderSearch from './components/search';
 import HeaderChangeInitialOptions from './components/changeInitialOptions';
 import HeaderMinicart from './components/minicart';
-import Sitemap from '~/_config/sitemap';
-import { STORE_ATTR_REF, STORES } from '~/constants/stores';
 
 import './styles/index.scss';
 
@@ -16,7 +17,6 @@ const Header = () => {
 
   return (
     <>
-      <div className="header-cmp-shadow" />
       <header className="header-cmp centralized-y py-2 __bg-store-primary">
         <Container className="centralized-y justify-content-between flex-wrap">
           <div className="header-cmp-logo-wrapper order-2 order-lg-1">
@@ -35,6 +35,7 @@ const Header = () => {
           </div>
         </Container>
       </header>
+      <div className="header-cmp-shadow" />
     </>
   );
 };

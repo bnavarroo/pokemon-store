@@ -5,10 +5,7 @@ const initialState = { userName: '' };
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case TYPES.SET_USERNAME:
-      return {
-        ...state,
-        userName: action.userName,
-      };
+      return { userName: action.userName };
 
     default:
       return state;
