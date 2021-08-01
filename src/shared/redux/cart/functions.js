@@ -29,7 +29,7 @@ export function getNewCartOnUpdate(currentCart, item) {
   const { items } = currentCart;
   let { totalCart, totalItems } = currentCart;
   const { product, quantity } = item;
-  const exists = currentCart.items.filter((cartItem) => cartItem.product[CART_ITEM_ATTR_REF] === product[CART_ITEM_ATTR_REF]).length > 0;
+  const exists = currentCart.items.some((cartItem) => cartItem.product[CART_ITEM_ATTR_REF] === product[CART_ITEM_ATTR_REF]);
 
   if (!exists) {
     items.push(item);
